@@ -1,0 +1,27 @@
+﻿<Project Sdk="Godot.NET.Sdk/3.3.0">
+	<PropertyGroup>
+        <TargetFrameworks>net472;netstandard2.0;netstandard2.1</TargetFrameworks>
+        <LangVersion>default</LangVersion>
+        <Nullable>enable</Nullable>
+        <RootNamespace>Cobilas</RootNamespace>
+	</PropertyGroup>
+    <PropertyGroup>
+        <Authors>BélicusBr</Authors>
+        <Title>Cobilas Godot IComponent</Title>
+        <PackageId>Cobilas.Godot.IComponent</PackageId>
+        <PackageVersion>1.0.0</PackageVersion>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageOutputPath>C:\local.nuget</PackageOutputPath>
+        <RepositoryType>git</RepositoryType>
+        <RepositoryUrl>https://github.com/BelicusBr/com.cobilas.godot.utility.git</RepositoryUrl>
+        <NeutralLanguage>en</NeutralLanguage>
+        <PackageTags>CSharp;C#;net472;netstandard2.0;netstandard2.1;godotengine;godot</PackageTags>
+        <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    </PropertyGroup>
+	<ItemGroup>
+	  <PackageReference Include="Cobilas.Core.Net4x" Version="2.3.0" />
+	  <PackageReference Include="Cobilas.Godot.Utility" Version="5.0.0" />
+	</ItemGroup>
+</Project>
