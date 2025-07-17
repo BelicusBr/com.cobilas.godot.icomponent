@@ -13,13 +13,18 @@
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageOutputPath>C:\local.nuget</PackageOutputPath>
         <RepositoryType>git</RepositoryType>
-        <RepositoryUrl>https://github.com/BelicusBr/com.cobilas.godot.utility.git</RepositoryUrl>
+        <RepositoryUrl>https://github.com/BelicusBr/com.cobilas.godot.icomponent.git</RepositoryUrl>
         <NeutralLanguage>en</NeutralLanguage>
         <PackageTags>CSharp;C#;net472;netstandard2.0;netstandard2.1;godotengine;godot</PackageTags>
         <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <GenerateDocumentationFile>True</GenerateDocumentationFile>
     </PropertyGroup>
+    <ItemGroup>
+        <None Include="README.md" Pack="true" PackagePath="\" />
+        <None Include="LICENSE.md" Pack="true" PackagePath="\" />
+        <None Include="CHANGELOG.md" Pack="true" PackagePath="\" />
+    </ItemGroup>
 	<ItemGroup>
 	  <PackageReference Include="Cobilas.Core.Net4x" Version="2.3.0" />
 	  <PackageReference Include="Cobilas.Godot.Utility" Version="5.0.0" />

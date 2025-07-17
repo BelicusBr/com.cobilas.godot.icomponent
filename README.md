@@ -1,0 +1,1 @@
+# Cobilas.Godot.IComponent 1.0.0
