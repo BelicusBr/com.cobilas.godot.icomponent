@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using Cobilas.GodotEngine.Utility;
 
 namespace Cobilas.GodotEngine.Component;
-/// <summary>Representa um ComponentHub nulo.</summary>
+/// <summary>Represents a null ComponentHub.</summary>
 public class NullComponentHub : Node, IComponentHub, INullObject {
 
     private static readonly NullComponentHub @null = new();
@@ -15,8 +15,8 @@ public class NullComponentHub : Node, IComponentHub, INullObject {
     public Node? Parent => NullNode.Null;
     /// <inheritdoc/>
     public IComponentHub? ParentComponent => null;
-    /// <summary>Uma representa de um ComponentHub nulo.</summary>
-    /// <returns>Retorna uma representa de um ComponentHub nulo.</returns>
+    /// <summary>A representation of a null ComponentHub.</summary>
+    /// <returns>Returns a representation of a null ComponentHub.</returns>
     public static NullComponentHub Null => @null;
     /// <inheritdoc/>
     public Node? AddComponent(Type? component) => NullNode.Null;

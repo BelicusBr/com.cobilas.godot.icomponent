@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using Cobilas.GodotEngine.Utility;
 
 namespace Cobilas.GodotEngine.Component;
-/// <summary>Classe interna para manipulação de <seealso cref="IComponentHub"/>.</summary>
+/// <summary>Inner class for handling <seealso cref="IComponentHub"/>.</summary>
 [Serializable]
 public sealed class InternalComponentHub(Node entity) : IInternalComponentHub, IDisposable
 {
@@ -24,10 +24,9 @@ public sealed class InternalComponentHub(Node entity) : IInternalComponentHub, I
     /// <summary>The destructor is responsible for discarding unmanaged resources.</summary>
     ~InternalComponentHub() => Dispose(disposing: false);
     /// <inheritdoc/>
-    /// <remarks>Caso o tipo especificado for nulo ou não for encontrado não lista de componentes será
-    /// retornado um objeto do tipo <seealso cref="Cobilas.GodotEngine.Utility.NullNode"/>.
-    /// </remarks>
-    /// <exception cref="ArgumentException">Ocorre quando o tipo especificado não herda <seealso cref="Godot.Node"/>.</exception>
+    /// <remarks>If the specified type is null or not found in the component list, 
+    /// an object of type <seealso cref="Cobilas.GodotEngine.Utility.NullNode"/> will be returned.</remarks>
+    /// <exception cref="ArgumentException">Occurs when the specified type does not inherit from <seealso cref="Godot.Node"/>.</exception>
     public Node? GetComponent(Type? component, bool recursive) {
         if (component is null) return NullNode.Null;
         else if (!component.CompareTypeAndSubType<Node>())
@@ -45,20 +44,17 @@ public sealed class InternalComponentHub(Node entity) : IInternalComponentHub, I
     /// <inheritdoc cref="GetComponent(Type?, bool)"/>
     public Node? GetComponent(Type? component) => GetComponent(component, false);
     /// <inheritdoc/>
-    /// <remarks>Caso o tipo especificado for nulo ou não for encontrado não lista de componentes será
-    /// retornado um objeto do tipo <seealso cref="Cobilas.GodotEngine.Utility.NullNode"/>.
-    /// </remarks>
-    /// <exception cref="ArgumentException">Ocorre quando o tipo especificado não herda <seealso cref="Godot.Node"/>.</exception>
+    /// <remarks>If the specified type is null or not found in the component list, 
+    /// an object of type <seealso cref="Cobilas.GodotEngine.Utility.NullNode"/> will be returned.</remarks>
+    /// <exception cref="ArgumentException">Occurs when the specified type does not inherit from <seealso cref="Godot.Node"/>.</exception>
     public TypeComponent? GetComponent<TypeComponent>(bool recursive) where TypeComponent : Node
         => (TypeComponent?)GetComponent(typeof(TypeComponent), recursive);
     /// <inheritdoc cref="GetComponent{TypeComponent}(bool)"/>
     public TypeComponent? GetComponent<TypeComponent>() where TypeComponent : Node
         => GetComponent<TypeComponent>(false);
     /// <inheritdoc/>
-    /// <remarks>Caso o tipo especificado for nulo ou não for encontrado não lista de componentes será
-    /// retornado uma lista de vazia.
-    /// </remarks>
-    /// <exception cref="ArgumentException">Ocorre quando o tipo especificado não herda <seealso cref="Godot.Node"/>.</exception>
+    /// <remarks>If the specified type is null or not found in the component list, an empty list will be returned.</remarks>
+    /// <exception cref="ArgumentException">Occurs when the specified type does not inherit from <seealso cref="Godot.Node"/>.</exception>
     public Node[]? GetComponents(Type? component, bool recursive) {
         if (component is null || ComponentsCount == 0 || components is null) return [];
         else if (!component.CompareTypeAndSubType<Node>())
@@ -79,10 +75,8 @@ public sealed class InternalComponentHub(Node entity) : IInternalComponentHub, I
     /// <inheritdoc cref="GetComponents(Type?, bool)"/>
     public Node[]? GetComponents(Type? component) => GetComponents(component, false);
     /// <inheritdoc/>
-    /// <remarks>Caso o tipo especificado for nulo ou não for encontrado não lista de componentes será
-    /// retornado uma lista de vazia.
-    /// </remarks>
-    /// <exception cref="ArgumentException">Ocorre quando o tipo especificado não herda <seealso cref="Godot.Node"/>.</exception>
+    /// <remarks>If the specified type is null or not found in the component list, an empty list will be returned.</remarks>
+    /// <exception cref="ArgumentException">Occurs when the specified type does not inherit from <seealso cref="Godot.Node"/>.</exception>
     public TypeComponent[]? GetComponents<TypeComponent>(bool recursive) where TypeComponent : Node {
         Node[]? nodes = GetComponents(typeof(TypeComponent), recursive);
         if (nodes is not null && nodes.Length == 0) return [];
@@ -92,10 +86,9 @@ public sealed class InternalComponentHub(Node entity) : IInternalComponentHub, I
     /// <inheritdoc cref="GetComponents{TypeComponent}(bool)"/>
     public TypeComponent[]? GetComponents<TypeComponent>() where TypeComponent : Node => GetComponents<TypeComponent>(false);
     /// <inheritdoc/>
-    /// <remarks>Caso o tipo especificado for nulo ou não for encontrado não lista de componentes será
-    /// retornado um objeto do tipo <seealso cref="Cobilas.GodotEngine.Utility.NullNode"/>.
-    /// </remarks>
-    /// <exception cref="ArgumentException">Ocorre quando o tipo especificado não herda <seealso cref="Godot.Node"/>.</exception>
+    /// <remarks>If the specified type is null or not found in the component list, 
+    /// an object of type <seealso cref="Cobilas.GodotEngine.Utility.NullNode"/> will be returned.</remarks>
+    /// <exception cref="ArgumentException">Occurs when the specified type does not inherit from <seealso cref="Godot.Node"/>.</exception>
     public Node? AddComponent(Type? component) {
         if (component is null || Entity is null) return NullNode.Null;
         else if (!component.CompareTypeAndSubType<Node>())
@@ -109,17 +102,16 @@ public sealed class InternalComponentHub(Node entity) : IInternalComponentHub, I
         return result;
     }
     /// <inheritdoc/>
-    /// <exception cref="ArgumentException">Ocorre quando o tipo especificado não herda <seealso cref="Godot.Node"/>.</exception>
+    /// <exception cref="ArgumentException">Occurs when the specified type does not inherit from <seealso cref="Godot.Node"/>.</exception>
     public void AddComponents(params Type[]? components) {
         if (components is not null)
             foreach (Type item in components)
                 AddComponent(item);
     }
     /// <inheritdoc/>
-    /// <remarks>Caso o tipo especificado for nulo ou não for encontrado não lista de componentes será
-    /// retornado um objeto do tipo <seealso cref="Cobilas.GodotEngine.Utility.NullNode"/>.
-    /// </remarks>
-    /// <exception cref="ArgumentException">Ocorre quando o tipo especificado não herda <seealso cref="Godot.Node"/>.</exception>
+    /// <remarks>If the specified type is null or not found in the component list, 
+    /// an object of type <seealso cref="Cobilas.GodotEngine.Utility.NullNode"/> will be returned.</remarks>
+    /// <exception cref="ArgumentException">Occurs when the specified type does not inherit from <seealso cref="Godot.Node"/>.</exception>
     public TypeComponent? AddComponent<TypeComponent>() where TypeComponent : Node
         => (TypeComponent?)AddComponent(typeof(TypeComponent));
     /// <inheritdoc/>
@@ -151,7 +143,6 @@ public sealed class InternalComponentHub(Node entity) : IInternalComponentHub, I
     }
     /// <inheritdoc/>
     public void Dispose() {
-        // Não altere este código. Coloque o código de limpeza no método 'Dispose(bool disposing)'
         Dispose(disposing: true);
         GC.SuppressFinalize(this);
     }
@@ -173,12 +164,11 @@ public sealed class InternalComponentHub(Node entity) : IInternalComponentHub, I
             disposedValue = true;
         }
     }
-    /// <summary>Função estatica para adicionar o componentes automaticamente.</summary>
-    /// <remarks>O objeto <seealso cref="Godot.Node"/> alvo deve possuir o atributo <seealso cref="RequireComponentAttribute"/>
-    /// para especificar os tipos que vão ser adicionados.
-    /// </remarks>
-    /// <param name="mono">Objeto <seealso cref="Godot.Node"/> alvo.</param>
-    /// <exception cref="ArgumentException">Ocorre quando o tipo especificado não herda <seealso cref="Godot.Node"/>.</exception>
+    /// <summary>Static function to add components automatically.</summary>
+    /// <remarks>The target <seealso cref="Godot.Node"/> object must have 
+    /// the <seealso cref="RequireComponentAttribute"/> attribute to specify the types to be added.</remarks>
+    /// <param name="mono">Target <seealso cref="Godot.Node"/> object.</param>
+    /// <exception cref="ArgumentException">Occurs when the specified type does not inherit from <seealso cref="Godot.Node"/>.</exception>
     public static void AddRequireComponent(Node? mono) {
         if (mono is null) return;
         RequireComponentAttribute require = mono.GetType().GetCustomAttribute<RequireComponentAttribute>(true);

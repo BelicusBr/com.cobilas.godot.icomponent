@@ -4,63 +4,63 @@ using System.Collections.Generic;
 
 namespace Cobilas.GodotEngine.Component;
 
-/// <summary>Uma interface para transformar um objeto <see cref="Godot.Node"/> em pseudo Componente.</summary>
+/// <summary>An interface to transform a <see cref="Godot.Node"/> object into a pseudo Component.</summary>
 public interface IComponentHub : IEnumerable<Node>
 {
-    /// <summary>O objeto pai.</summary>
-    /// <returns>Retorna o objeto pai.</returns>
+    /// <summary>The parent object.</summary>
+    /// <returns>Returns the parent object.</returns>
     Node? Parent { get; }
-    /// <summary>A quantidade de objetos filho.</summary>
-    /// <returns>Retorna a quantidade de objetos filho.</returns>
+    /// <summary>The number of child objects.</summary>
+    /// <returns>Returns the number of child objects.</returns>
     int ComponentsCount { get; }
-    /// <summary>O objeto pai como <seealso cref="IComponentHub"/>.</summary>
-    /// <returns>Retorna o objeto pai como <seealso cref="IComponentHub"/>.</returns>
+    /// <summary>The parent object as <seealso cref="IComponentHub"/>.</summary>
+    /// <returns>Returns the parent object as <seealso cref="IComponentHub"/>.</returns>
     IComponentHub? ParentComponent { get; }
-    /// <summary>Obtem o componente por meio do tipo especificado.</summary>
-    /// <param name="component">O tipo a ser obtido.</param>
-    /// <param name="recursive">Permite procurar em sub-filhos.</param>
-    /// <returns>Retorna o tipo de componente como nó.</returns>
+    /// <summary>Gets the component by the specified type.</summary>
+    /// <param name="component">The type to be obtained.</param>
+    /// <param name="recursive">Allows searching in sub-children.</param>
+    /// <returns>Returns the component type as node.</returns>
     Node? GetComponent(Type? component, bool recursive);
     /// <inheritdoc cref="GetComponent(Type?, bool)"/>
     Node? GetComponent(Type? component);
     /// <inheritdoc cref="GetComponent(Type?, bool)"/>
-    /// <typeparam name="TypeComponent">O tipo a ser obtido.</typeparam>
+    /// <typeparam name="TypeComponent">The type to be obtained.</typeparam>
     TypeComponent? GetComponent<TypeComponent>(bool recursive) where TypeComponent : Node;
     /// <inheritdoc cref="GetComponent{TypeComponent}(bool)"/>
     TypeComponent? GetComponent<TypeComponent>() where TypeComponent : Node;
-    /// <summary>Obtem os componentes por meio do tipo especificado.</summary>
-    /// <param name="component">O tipo a ser obtido.</param>
-    /// <param name="recursive">Permite procurar em sub-filhos.</param>
-    /// <returns>Retorna os tipos de componentes como uma lista de nó.</returns>
+    /// <summary>Gets components by the specified type.</summary>
+    /// <param name="component">The type to be obtained.</param>
+    /// <param name="recursive">Allows searching in sub-children.</param>
+    /// <returns>Returns the component types as a node list.</returns>
     Node[]? GetComponents(Type? component, bool recursive);
     /// <inheritdoc cref="GetComponents(Type?, bool)"/>
     Node[]? GetComponents(Type? component);
     /// <inheritdoc cref="GetComponents(Type?, bool)"/>
-    /// <typeparam name="TypeComponent">O tipo a ser obtido.</typeparam>
+    /// <typeparam name="TypeComponent">The type to be obtained.</typeparam>
     TypeComponent[]? GetComponents<TypeComponent>(bool recursive) where TypeComponent : Node;
     /// <inheritdoc cref="GetComponents{T}(bool)"/>
     TypeComponent[]? GetComponents<TypeComponent>() where TypeComponent : Node;
-    /// <summary>Permite adicionar um componente especificado o seu tipo.</summary>
-    /// <param name="component">O tipo a ser adicionado.</param>
-    /// <returns>Retorna o tipo que foi adicionado.</returns>
+    /// <summary>Allows you to add a component by specifying its type.</summary>
+    /// <param name="component">The type to be added.</param>
+    /// <returns>Returns the type that was added.</returns>
     Node? AddComponent(Type? component);
     /// <inheritdoc cref="AddComponent(Type?)"/>
-    /// <typeparam name="TypeComponent">O tipo a ser adicionado.</typeparam>
+    /// <typeparam name="TypeComponent">The type to be added.</typeparam>
     TypeComponent? AddComponent<TypeComponent>() where TypeComponent : Node;
-    /// <summary>Permite adicionar varios componentes especificado o seu tipo.</summary>
-    /// <param name="components">O tipos a serem adicionados.</param>
+    /// <summary>Allows you to add multiple components by specifying their type.</summary>
+    /// <param name="components">The types to be added.</param>
     void AddComponents(params Type[]? components);
-    /// <summary>Permite adicionar um objeto <seealso cref="Godot.Node"/> a lista de componentes.</summary>
-    /// <param name="component">O objeto <seealso cref="Godot.Node"/> a ser adicionado.</param>
+    /// <summary>Allows you to add a <seealso cref="Godot.Node"/> object to the component list.</summary>
+    /// <param name="component">The <seealso cref="Godot.Node"/> object to add.</param>
     void AddNodeComponent(Node? component);
-    /// <summary>Permite adicionar varios objetos <seealso cref="Godot.Node"/> a lista de componentes.</summary>
-    /// <param name="components">Os objetos <seealso cref="Godot.Node"/> a serem adicionados.</param>
+    /// <summary>Allows you to add multiple <seealso cref="Godot.Node"/> objects to the component list.</summary>
+    /// <param name="components">The <seealso cref="Godot.Node"/> objects to add.</param>
     void AddNodeComponents(params Node[]? components);
-    /// <summary>Permite remover um objeto <seealso cref="Godot.Node"/> a lista de componentes.</summary>
-    /// <param name="component">O objeto <seealso cref="Godot.Node"/> a ser removido.</param>
-    /// <returns>Retorna <c>true</c> se a opração for bem sucedida.</returns>
+    /// <summary>Allows you to remove a <seealso cref="Godot.Node"/> object from the list of components.</summary>
+    /// <param name="component">The <seealso cref="Godot.Node"/> object to remove.</param>
+    /// <returns>Returns <c>true</c> if the operation is successful.</returns>
     bool RemoveComponent(Node? component);
-    /// <summary>Permite remover varios objetos <seealso cref="Godot.Node"/> a lista de componentes.</summary>
-    /// <param name="components">Os objetos <seealso cref="Godot.Node"/> a serem removidos.</param>
+    /// <summary>Allows you to remove several <seealso cref="Godot.Node"/> objects from the list of components.</summary>
+    /// <param name="components">The <seealso cref="Godot.Node"/> objects to be removed.</param>
     void RemoveComponents(params Node[]? components);
 }
