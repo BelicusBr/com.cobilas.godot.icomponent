@@ -46,10 +46,10 @@ public class MonoNode : Node, IComponentHub {
 To include the package, open the `.csproj` file and add it.
 ```xml
 <ItemGroup>
-	<PackageReference Include="Cobilas.Godot.IComponent" Version="1.0.0" />
+	<PackageReference Include="Cobilas.Godot.IComponent" Version="1.1.0" />
 </ItemGroup>
 ```
 Or use command line.
 ```
-dotnet add package Cobilas.Godot.IComponent --version 1.0.0
+dotnet add package Cobilas.Godot.IComponent --version 1.1.0
 ```

@@ -1,3 +1,6 @@
+# [1.1.0] (28/08/2025)
+## Changed
+Package dependencies have been updated to the latest versions.
 # [1.0.0] (31/07/2025)
 ## Changed
 All objects have been properly documented for a better understanding of the objects or functions.
