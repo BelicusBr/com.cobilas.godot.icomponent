@@ -9,7 +9,7 @@
         <Authors>BélicusBr</Authors>
         <Title>Cobilas Godot IComponent</Title>
         <PackageId>Cobilas.Godot.IComponent</PackageId>
-        <PackageVersion>1.1.0</PackageVersion>
+        <PackageVersion>1.1.1</PackageVersion>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageOutputPath>C:\local.nuget</PackageOutputPath>
         <RepositoryType>git</RepositoryType>
@@ -26,7 +26,7 @@
         <None Include="CHANGELOG.md" Pack="true" PackagePath="\" />
     </ItemGroup>
 	<ItemGroup>
-	  <PackageReference Include="Cobilas.Core.Net4x" Version="2.5.0" />
-	  <PackageReference Include="Cobilas.Godot.Utility" Version="5.1.0" />
+	  <PackageReference Include="Cobilas.Core.Net4x" Version="2.6.0" />
+	  <PackageReference Include="Cobilas.Godot.Utility" Version="6.2.3" />
 	</ItemGroup>
 </Project>

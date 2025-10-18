@@ -1,3 +1,6 @@
+# [1.1.1] (17/10/2025)
+## Changed
+Package dependencies have been updated to the latest versions.
 # [1.1.0] (28/08/2025)
 ## Changed
 Package dependencies have been updated to the latest versions.
