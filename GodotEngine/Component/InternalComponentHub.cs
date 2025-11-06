@@ -9,8 +9,7 @@ using Cobilas.GodotEngine.Utility;
 namespace Cobilas.GodotEngine.Component;
 /// <summary>Inner class for handling <seealso cref="IComponentHub"/>.</summary>
 [Serializable]
-public sealed class InternalComponentHub(Node entity) : IInternalComponentHub, IDisposable
-{
+public sealed class InternalComponentHub(Node entity) : IInternalComponentHub, IDisposable {
     private Node[]? components;
     [NonSerialized] private bool disposedValue;
     /// <inheritdoc/>
@@ -151,14 +150,10 @@ public sealed class InternalComponentHub(Node entity) : IInternalComponentHub, I
 
     IEnumerator IEnumerable.GetEnumerator() => new ArrayToIEnumerator<Node>(components ?? []);
 
-    private void Dispose(bool disposing)
-    {
-        if (!disposedValue)
-        {
-            if (disposing)
-            {
-                foreach (Node item in this)
-                    item?.Dispose();
+    private void Dispose(bool disposing) {
+        if (!disposedValue) {
+            if (disposing) {
+                ArrayManipulation.ClearArraySafe(ref components);
                 _ = ParentComponent?.RemoveComponent(this.Entity);
             }
             disposedValue = true;
