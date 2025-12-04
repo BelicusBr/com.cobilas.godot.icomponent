@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36616.10 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "godot.test", "godot.test.csproj", "{EAD41D86-D9E7-46E6-B49A-0BCAF5F4753C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.cobilas.godot.icomponent", "..\src\com.cobilas.godot.icomponent\com.cobilas.godot.icomponent.csproj", "{B5A9B729-0E16-7039-7602-873E687A469A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		ExportDebug|Any CPU = ExportDebug|Any CPU
+		ExportRelease|Any CPU = ExportRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EAD41D86-D9E7-46E6-B49A-0BCAF5F4753C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAD41D86-D9E7-46E6-B49A-0BCAF5F4753C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAD41D86-D9E7-46E6-B49A-0BCAF5F4753C}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{EAD41D86-D9E7-46E6-B49A-0BCAF5F4753C}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{EAD41D86-D9E7-46E6-B49A-0BCAF5F4753C}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{EAD41D86-D9E7-46E6-B49A-0BCAF5F4753C}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+		{B5A9B729-0E16-7039-7602-873E687A469A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5A9B729-0E16-7039-7602-873E687A469A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5A9B729-0E16-7039-7602-873E687A469A}.ExportDebug|Any CPU.ActiveCfg = Release|Any CPU
+		{B5A9B729-0E16-7039-7602-873E687A469A}.ExportDebug|Any CPU.Build.0 = Release|Any CPU
+		{B5A9B729-0E16-7039-7602-873E687A469A}.ExportRelease|Any CPU.ActiveCfg = Release|Any CPU
+		{B5A9B729-0E16-7039-7602-873E687A469A}.ExportRelease|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

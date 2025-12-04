@@ -1,10 +1,6 @@
 # folders
-bin/
-obj/
-.mono/
 .vs/
-.vscode/
-.libs/
-
-# files
-*.sln
+bim/
+obj/
+.import/
+.mono
