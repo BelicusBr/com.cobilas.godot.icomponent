@@ -33,16 +33,16 @@
 		<CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
 	</PropertyGroup>
 	<ItemGroup>
-		<None Include="README.md" Pack="true" PackagePath="\" />
-		<None Include="LICENSE.md" Pack="true" PackagePath="\" />
-		<None Include="CHANGELOG.md" Pack="true" PackagePath="\" />
+		<None Include="..\..\README.md" Pack="true" PackagePath="\" />
+		<None Include="..\..\LICENSE.md" Pack="true" PackagePath="\" />
+		<None Include="..\..\CHANGELOG.md" Pack="true" PackagePath="\" />
         <PackageReference Include="Cobilas.Core.Net4x" Version="2.7.2" />
 		<PackageReference Include="Cobilas.Godot.Utility" Version="7.3.2" />
 		<Reference Include="GodotSharp">
-			<HintPath>..\assemblies\Debug\GodotSharp.dll</HintPath>
+			<HintPath>..\..\assemblies\Debug\GodotSharp.dll</HintPath>
 		</Reference>
 		<Reference Include="GodotSharpEditor">
-			<HintPath>..\assemblies\Debug\GodotSharpEditor.dll</HintPath>
+			<HintPath>..\..\assemblies\Debug\GodotSharpEditor.dll</HintPath>
 		</Reference>
 	</ItemGroup>
 </Project>
