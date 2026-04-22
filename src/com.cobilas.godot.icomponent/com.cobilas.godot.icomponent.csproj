@@ -33,7 +33,8 @@
 		<CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
 	</PropertyGroup>
 	<ItemGroup>
-		<None Include="..\..\README.md" Pack="true" PackagePath="\" />
+        <None Include="..\..\project-git-funcs.ps1"/>
+        <None Include="..\..\README.md" Pack="true" PackagePath="\" />
 		<None Include="..\..\LICENSE.md" Pack="true" PackagePath="\" />
 		<None Include="..\..\CHANGELOG.md" Pack="true" PackagePath="\" />
         <PackageReference Include="Cobilas.Core.Net4x" Version="2.12.0" />
