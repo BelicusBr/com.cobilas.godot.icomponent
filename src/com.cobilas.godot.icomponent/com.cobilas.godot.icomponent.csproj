@@ -8,14 +8,15 @@
 		<NoWarn>1701;1702;IDE0290;IDE0300;IDE0301;IDE0130;IDE1006;IDE0056;IDE0057</NoWarn>
 		<AssemblyName>com.cobilas.godot.icomponent</AssemblyName>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
-		<PackageId>Cobilas.Godot.IComponent</PackageId>
+		<Version>1.3.1</Version>
+		<WarningLevel>4</WarningLevel>
+		<CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+	</PropertyGroup>
+    <!--NuGet-->
+    <PropertyGroup>
 		<Title>Cobilas Godot IComponent</Title>
-		<Version>1.3.0</Version>
 		<Authors>BélicusBr</Authors>
-		<PackageTags>CSharp;C#;net472;netstandard2.0;godotengine;godot</PackageTags>
-		<RepositoryType>git</RepositoryType>
-		<RepositoryUrl>https://github.com/BelicusBr/com.cobilas.godot.icomponent</RepositoryUrl>
-		<NeutralLanguage>en</NeutralLanguage>
+		<PackageId>Cobilas.Godot.IComponent</PackageId>
 		<IncludeSymbols>True</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
@@ -23,15 +24,11 @@
 		<Description>This package aims to transform a Node object into a pseudo-component in the style of the Unity Engine to facilitate obtaining objects and adding child objects.</Description>
 		<PackageOutputPath>C:\local.nuget</PackageOutputPath>
         <GeneratePackageOnBuild Condition="'$(Configuration)'=='Release'">true</GeneratePackageOnBuild>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-		<WarningLevel>4</WarningLevel>
-		<CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-		<WarningLevel>4</WarningLevel>
-		<CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
-	</PropertyGroup>
+		<NeutralLanguage>en</NeutralLanguage>
+		<PackageTags>CSharp;C#;net472;netstandard2.0;godotengine;godot</PackageTags>
+		<RepositoryType>git</RepositoryType>
+		<RepositoryUrl>https://github.com/BelicusBr/com.cobilas.godot.icomponent</RepositoryUrl>
+    </PropertyGroup>
 	<ItemGroup>
         <None Include="..\..\project-git-funcs.ps1"/>
         <None Include="..\..\README.md" Pack="true" PackagePath="\" />
