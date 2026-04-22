@@ -7,6 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.3.1] - (21/04/2026)
+
+### Fixed
+- Corrected `.gitignore` entry from `bim/` to `bin/`, ensuring build output directories are properly ignored.
+
+### Changed
+- Refactored project file (`com.cobilas.godot.icomponent.csproj`):
+  - Moved NuGet packaging properties (`PackageId`, `Title`, `Authors`, `IncludeSymbols`, `SymbolPackageFormat`, `PackageReadmeFile`, `PackageLicenseFile`, `Description`, `PackageOutputPath`, `GeneratePackageOnBuild`, `NeutralLanguage`, `PackageTags`, `RepositoryType`, `RepositoryUrl`) into a dedicated `<PropertyGroup>`.
+  - Set `GeneratePackageOnBuild` to only run in `Release` configuration.
+  - Moved `WarningLevel` and `CheckForOverflowUnderflow` to the main property group (applies to all configurations).
+  - Added `project-git-funcs.ps1` to the project as a content file.
+- Bumped package version from `1.3.0` to `1.3.1`.
+
+---
+
 ## [1.3.0] - (21/04/2026)
 ### Changed
 - Updated dependency `Cobilas.Core.Net4x` from version `2.7.2` to `2.12.0`.
