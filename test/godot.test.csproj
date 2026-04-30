@@ -4,6 +4,6 @@
     <Configurations>Debug;ExportDebug;ExportRelease;Release</Configurations>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Cobilas.Godot.IComponent" Version="1.3.0" />
+    <PackageReference Include="Cobilas.Godot.IComponent" Version="1.3.1" />
   </ItemGroup>
 </Project>
